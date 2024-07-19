@@ -1,0 +1,110 @@
+---
+title: Mwmbl, the Free and Open Source Search Engine
+layout: layouts/layout.njk
+---
+
+<section class="hero">
+  <h1 class="main-heading">
+    The first <span>truly</span> open source search engine 🔎
+  </h1>
+  <p class="description">
+    Mwmbl (pronounced "mumble") is the first search engine that's completely
+    independent, open source, and non-profit.
+  </p>
+
+  <form action="https://mwmbl.org" class="search-form">
+    <input
+      type="text"
+      name="q"
+      placeholder="Search through Mwmbl"
+      autocomplete="off"
+    />
+    <button class="search-button"><i class="ri-search-line"></i></button>
+  </form>
+</section>
+
+<style>
+  .hero {
+    padding: 2.5rem 0;
+  }
+
+  .main-heading {
+    margin-bottom: 2.5rem;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  .main-heading span {
+    padding: 0 0.75rem;
+    background-image: var(--bg-gradient-135);
+    border-radius: 1rem;
+  }
+
+  .main-heading i {
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  .description {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    color: var(--text-alt);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .search-form {
+    height: 4rem;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--bg-box);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: auto 4rem;
+  }
+
+  .search-form input {
+    padding: 0 1.25rem;
+    font-size: 1.25rem;
+  }
+
+  .search-button {
+    margin: 0.75rem;
+    background: var(--bg-gradient-135);
+    border-radius: 100vw;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .search-button:hover {
+    opacity: 0.85;
+  }
+
+  .search-button:active {
+    transform: scale(0.9);
+    opacity: 0.65;
+    transition: none;
+  }
+
+  @media (max-width: 1100px) {
+    .main-heading {
+      font-size: 3rem;
+    }
+    
+    .description {
+      width: 100%;
+      font-size: 1.25rem;
+    }
+
+    .search-form {
+      width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,152 @@
+@import url(https://fonts.bunny.net/css?family=inter:400,500,600|space-grotesk:600);
+@import url(https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --text: hsl(0, 0%, 10%);
+  --text-alt: hsla(0, 0%, 10%, 0.65);
+  --bg-body: hsl(220, 4%, 92%);
+  --bg-box: hsl(220, 4%, 100%);
+  --gradient-colors: #FFD83A, #DD8AFF, #74C3FF;
+  --bg-gradient: linear-gradient(90deg, var(--gradient-colors));
+  --bg-gradient-135: linear-gradient(135deg, var(--gradient-colors));
+  --shadow: 0 0.125rem 0.25rem 0 hsla(0, 0%, 0%, 0.1);
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.063em;
+  line-height: 1.2;
+}
+
+input {
+  width: 100%;
+}
+
+.content-container {
+  height: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.global-header {
+  height: 5.5rem;
+  background-color: var(--bg-body);
+  position: sticky;
+  top: 0;
+}
+
+.global-header > .content-container {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-top-gradient {
+  height: 0.5rem;
+  background-image: var(--bg-gradient);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 12rem;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+.menu-item {
+  margin-left: 1.5rem;
+  font-weight: 600;
+  display: block;
+}
+
+.menu-item:first-child {
+  margin-left: 0;
+}
+
+.mobile-menu-button {
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--bg-box);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#mobile-menu {
+  width: 100%;
+  height: 0;
+  background-color: var(--bg-box);
+  border-radius: 1rem 1rem 0 0;
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: height 0.25s;
+}
+
+#mobile-menu._expanded {
+  height: calc(100% - 5rem);
+  pointer-events: auto;
+}
+
+.mobile-menu-content {
+  max-height: 100%;
+  padding: 2rem 1rem;
+  overflow: auto;
+}
+
+.mobile-menu-item {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+}
+
+.mobile-menu-item:first-child {
+  margin-top: 0;
+}
+
+main.content-container {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 600px) {
+  .desktop-menu {
+    display: flex;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+}

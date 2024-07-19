@@ -1,0 +1,57 @@
+---
+title: Mwmbl
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/static/svg/logomark.svg" />
+
+    <title>{{ title }} — Mwmbl</title>
+
+    <!-- This is to prevent false-positive IDE errors -->
+    {{
+      "<" | safe
+    }}style>{% include "styles/index.css" %}{{
+      "<" | safe
+    }}/style>
+
+    <script src="/static/js/mobileMenu.js" defer></script>
+  </head>
+  <body>
+    <header class="global-header">
+      <div class="header-top-gradient"></div>
+      <div class="content-container">
+        <a class="logo" href="/"> {% include "svg/logo.njk" %} </a>
+
+        <!-- Mobile menu toggle -->
+        <button class="mobile-menu-button" onclick="mobileMenu.toggle()">
+          <i class="ri-menu-line"></i>
+        </button>
+
+        <!-- Desktop menu -->
+        <nav class="desktop-menu">
+          <a href="/" class="menu-item">Home</a>
+          <a href="/mission" class="menu-item">Our Mission</a>
+          <a href="/team" class="menu-item">The Team</a>
+          <a href="/donate" class="menu-item">Donate</a>
+        </nav>
+      </div>
+    </header>
+
+    <div id="mobile-menu">
+      <nav class="mobile-menu-content content-container">
+        <a href="/" class="mobile-menu-item">Home</a>
+        <a href="/mission" class="mobile-menu-item">Our Mission</a>
+        <a href="/team" class="mobile-menu-item">The Team</a>
+        <a href="/donate" class="mobile-menu-item">Donate</a>
+      </nav>
+    </div>
+
+    <main class="content-container">
+      {{ content | safe }}
+    </main>
+  </body>
+</html>
